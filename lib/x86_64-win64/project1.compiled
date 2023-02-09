@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.2.2\bin\x86_64-win64\fpc.exe" Date="1429738194"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -gw2 -godwarfsets -gl -l -vewnhibq -FiC:\Users\Gabriel\Gabes\Pascal-Procedures-to-make-class-less-unbearable\lib\x86_64-win64 -FuC:\Users\Gabriel\Gabes\Pascal-Procedures-to-make-class-less-unbearable\ -FUC:\Users\Gabriel\Gabes\Pascal-Procedures-to-make-class-less-unbearable\lib\x86_64-win64\ -FEC:\Users\Gabriel\Gabes\Pascal-Procedures-to-make-class-less-unbearable\ -oC:\Users\Gabriel\Gabes\Pascal-Procedures-to-make-class-less-unbearable\project1.exe project1.lpr"/>
+  <Complete Value="False"/>
+</CONFIG>
