@@ -46,8 +46,8 @@ function maxarray(list: array of integer):integer;
     i:integer;
     max:integer;
 begin
-   max:=list[1];
-   for i:=2 to Length(list) do
+   max:=list[0];
+   for i:=1 to (Length(list)-1) do
    begin
      if(list[i] > max)then
      begin
@@ -63,8 +63,8 @@ function minarray(list: array of integer):integer;
     i:integer;
     min:integer;
 begin
-   min:=list[1];
-   for i:=2 to Length(list) do
+   min:=list[0];
+   for i:=1 to (Length(list)-1) do
    begin
      if(list[i] < min)then
      begin
@@ -121,12 +121,46 @@ i:integer;
 sum, avg :real;
 begin
 sum:=0;
-for i:=1 to length(list) do
+for i:=0 to (length(list)-1) do
 begin
 inc(sum,list[i]);
 end;
 avg:=sum/length(list);
 average:=avg;
+// returns the number of values below average in an array
+function below_average(list:array of real):integer;
+var c,i:integer;
+avg:real;
+
+begin
+c:=0;
+avg:=average(list);
+for i:=1 to length(list) do
+begin
+if (list[i]<avg) then
+begin
+  inc(c,1);
+  end;
+end;
+below_average:=c;
+end;
+// returns the number of values above average in an array
+function above_average(list:array of real):integer;
+var c,i:integer;
+avg:real;
+
+begin
+c:=0;
+avg:=average(list);
+for i:=1 to length(list) do
+begin
+if (list[i]>avg) then
+begin
+  inc(c,1);
+  end;
+end;
+above_average:=c;
+end; 
 
 begin
   quit;
