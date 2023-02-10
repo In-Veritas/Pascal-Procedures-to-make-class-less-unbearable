@@ -63,10 +63,10 @@ function minarray(list: array of integer):integer;
     i:integer;
     min:integer;
 begin
-   min:=0;
-   for i:=1 to Length(list) do
+   min:=list[1];
+   for i:=2 to Length(list) do
    begin
-     if(list[i] > min)then
+     if(list[i] < min)then
      begin
        min:=list[i];
      end;
@@ -89,7 +89,7 @@ function zeroarray(size:integer):Array Of integer;
   zeroarray:=zeros;
   end;
 
-//Prints an array in a specific number of columns.
+{//Prints an array in a specific number of columns.
 procedure colprint(list: array of dynamictype;,cols: integer);
    var
     i,counter:integer;
@@ -109,7 +109,7 @@ procedure rowprint(rows: integer);
 begin
 
 
-end;
+end;}
 
 //returns the average of an array of values
 function average(list:array of real):real;
@@ -118,11 +118,11 @@ i:integer;
 sum, avg :real;
 begin
 sum:=0;
-for i:=1 to lenght(list) do
+for i:=1 to length(list) do
 begin
 inc(sum,list[i]);
 end;
-avg:=sum/lenght(list);
+avg:=sum/length(list);
 average:=avg;
 
 begin
