@@ -56,7 +56,7 @@ begin
    end;
    maxarray:=max;
 end;
-{
+
 //Returns smallest value in an array of integers
 function minarray(list: array of integer):integer;
   var
@@ -111,7 +111,20 @@ begin
 
 end;
 
-}
+//returns the average of an array of values
+function average(list:array of real):real;
+var 
+i:integer;
+sum, avg :real;
+begin
+sum:=0;
+for i:=1 to lenght(list) do
+begin
+inc(sum,list[i]);
+end;
+avg:=sum/lenght(list);
+average:=avg;
+
 begin
   quit;
   quit();
