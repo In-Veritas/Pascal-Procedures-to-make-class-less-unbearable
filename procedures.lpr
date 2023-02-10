@@ -90,7 +90,7 @@ function zeroarray(size:integer):nularray;
        zeros[i]:=0;
      end;
   zeroarray:=zeros;
-  end; 
+  end;
 
 {//Prints an array in a specific number of columns.
 procedure colprint(list: array of dynamictype;,cols: integer);
@@ -116,18 +116,19 @@ end;}
 
 //returns the average of an array of values
 function average(list:array of real):real;
-var 
+var
 i:integer;
 sum, avg :real;
 begin
 sum:=0;
 for i:=0 to (length(list)-1) do
 begin
-inc(sum,list[i]);
+sum:= sum+list[i];
 end;
 avg:=sum/length(list);
 average:=avg;
 
+end;
 
 // returns the number of values below average in an array
 function below_average(list:array of real):integer;
@@ -164,7 +165,7 @@ begin
   end;
 end;
 above_average:=c;
-end; 
+end;
 
 
 
@@ -176,19 +177,19 @@ begin
 
   //max; returns 21
   writeln(max(16,21):0:2);
-  
+
   //min; returns 16
   writeln(min(16,21):0:2);
-  
+
   //maxarray; return 21
   writeln(maxarray([16,21,10,16,12,9,4]));
-  
+
  // minarray; returns 4
   writeln(minarray([16,21,10,16,12,9,4]));
-  
+
   //average; returns 17.67
   writeln(average([17,18,18]):0:2);
-  
+
   //zeroarray; returns [ 0 0 0 0 0 ]
   write('[ ');
   list:=zeroarray(5);
@@ -200,12 +201,11 @@ begin
   writeln;
   //above_average; returns 2
   writeln(above_average([17,18,18]));
-  
+
   //below_average; returns 1
   writeln(below_average([17,18,18]));
 
   quit;
 
 
-end. 
-
+end.
