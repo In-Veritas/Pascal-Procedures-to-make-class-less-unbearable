@@ -127,6 +127,8 @@ inc(sum,list[i]);
 end;
 avg:=sum/length(list);
 average:=avg;
+
+
 // returns the number of values below average in an array
 function below_average(list:array of real):integer;
 var c,i:integer;
@@ -144,6 +146,8 @@ begin
 end;
 below_average:=c;
 end;
+
+
 // returns the number of values above average in an array
 function above_average(list:array of real):integer;
 var c,i:integer;
@@ -161,21 +165,30 @@ begin
 end;
 above_average:=c;
 end; 
+
+
+
 //tests
 var
   i:integer;
   list: array of integer;
 begin
+
   //max; returns 21
   writeln(max(16,21):0:2);
+  
   //min; returns 16
   writeln(min(16,21):0:2);
+  
   //maxarray; return 21
   writeln(maxarray([16,21,10,16,12,9,4]));
+  
  // minarray; returns 4
   writeln(minarray([16,21,10,16,12,9,4]));
+  
   //average; returns 17.67
   writeln(average([17,18,18]):0:2);
+  
   //zeroarray; returns [ 0 0 0 0 0 ]
   write('[ ');
   list:=zeroarray(5);
@@ -187,6 +200,7 @@ begin
   writeln;
   //above_average; returns 2
   writeln(above_average([17,18,18]));
+  
   //below_average; returns 1
   writeln(below_average([17,18,18]));
 
