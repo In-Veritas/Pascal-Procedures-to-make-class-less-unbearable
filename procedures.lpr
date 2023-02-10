@@ -161,10 +161,37 @@ begin
 end;
 above_average:=c;
 end; 
-
+//tests
+var
+  i:integer;
+  list: array of integer;
 begin
-  quit;
-  quit();
+  //max; returns 21
+  writeln(max(16,21):0:2);
+  //min; returns 16
+  writeln(min(16,21):0:2);
+  //maxarray; return 21
+  writeln(maxarray([16,21,10,16,12,9,4]));
+ // minarray; returns 4
+  writeln(minarray([16,21,10,16,12,9,4]));
+  //average; returns 17.67
+  writeln(average([17,18,18]):0:2);
+  //zeroarray; returns [ 0 0 0 0 0 ]
+  write('[ ');
+  list:=zeroarray(5);
+  for i:=1 to 5 do
+  begin
+  write(list[i],' ');
+  end;
+  write(']');
+  writeln;
+  //above_average; returns 2
+  writeln(above_average([17,18,18]));
+  //below_average; returns 1
+  writeln(below_average([17,18,18]));
 
-end.
+  quit;
+
+
+end. 
 
