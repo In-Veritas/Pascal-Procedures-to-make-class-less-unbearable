@@ -75,19 +75,22 @@ begin
 end;
 
 //Returns an array of integers filled with 0s
-function zeroarray(size:integer):Array Of integer;
+type
+  nularray=array of integer;
+function zeroarray(size:integer):nularray;
+
   var
    i:integer;
-   zeros:array[1..size] of integer;
+   zeros:array of integer;
 
   begin
-
+     setlength(zeros,size);
      for i:=1 to size do
      begin
        zeros[i]:=0;
      end;
   zeroarray:=zeros;
-  end;
+  end; 
 
 {//Prints an array in a specific number of columns.
 procedure colprint(list: array of dynamictype;,cols: integer);
