@@ -73,6 +73,35 @@ begin
    end;
    minarray:=min;
 end;
+//returns the index of the max of an array
+function index_maxarray(list:array of integer):integer;
+var i, indexmax, max : integer;
+  begin
+     max:=maxarray(list);
+     for i:=0 to (length(list)-1) do
+     begin
+       if list[i]=max then
+       begin
+         indexmax:=i
+       end;
+     end;
+     index_maxarray:=indexmax;
+  end;
+  
+//returns the index of the min of an array
+function index_minarray(list:array of integer):integer;
+var i, indexmin, min : integer;
+  begin
+     min:=minarray(list);
+     for i:=0 to (length(list)-1) do
+     begin
+       if list[i]=min then
+       begin
+         indexmin:=i
+       end;
+     end;
+     index_minarray:=indexmin;
+  end;
 
 //Returns an array of integers filled with 0s
 type
@@ -167,6 +196,19 @@ end;
 above_average:=c;
 end;
 
+// prints an array of integers
+procedure print_array(list:array of integer);
+ var i : integer;
+ begin
+ write( '[  ');
+ for i:=0 to (length(list)-1) do
+ begin
+ write( list[i],'  ')
+ end;
+ write(']');
+ writeln;
+ end;
+
 
 
 //tests
@@ -183,22 +225,21 @@ begin
 
   //maxarray; return 21
   writeln(maxarray([16,21,10,16,12,9,4]));
-
+  //index_maxarray; returns 1
+  writeln(index_maxarray([16,21,10,16,12,9,4]))
  // minarray; returns 4
   writeln(minarray([16,21,10,16,12,9,4]));
+ //index_minarray; returns 6
+  writeln(index_minarray([16,21,10,16,12,9,4]))
 
   //average; returns 17.67
   writeln(average([17,18,18]):0:2);
 
-  //zeroarray; returns [ 0 0 0 0 0 ]
+  //zeroarray, print_array; returns [ 0 0 0 0 0 ]
   write('[ ');
   list:=zeroarray(5);
-  for i:=1 to 5 do
-  begin
-  write(list[i],' ');
-  end;
-  write(']');
-  writeln;
+  print_array(list);
+  
   //above_average; returns 2
   writeln(above_average([17,18,18]));
 
