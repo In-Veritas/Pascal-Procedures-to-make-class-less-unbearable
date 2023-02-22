@@ -210,7 +210,6 @@ procedure print_array(list:array of integer);
  end;
 
 
-
 //tests
 var
   i:integer;
@@ -226,20 +225,20 @@ begin
   //maxarray; return 21
   writeln(maxarray([16,21,10,16,12,9,4]));
   //index_maxarray; returns 1
-  writeln(index_maxarray([16,21,10,16,12,9,4]))
+  writeln(index_maxarray([16,21,10,16,12,9,4]));
+
  // minarray; returns 4
   writeln(minarray([16,21,10,16,12,9,4]));
  //index_minarray; returns 6
-  writeln(index_minarray([16,21,10,16,12,9,4]))
+  writeln(index_minarray([16,21,10,16,12,9,4]));
 
   //average; returns 17.67
   writeln(average([17,18,18]):0:2);
 
   //zeroarray, print_array; returns [ 0 0 0 0 0 ]
-  write('[ ');
   list:=zeroarray(5);
   print_array(list);
-  
+
   //above_average; returns 2
   writeln(above_average([17,18,18]));
 
@@ -249,4 +248,4 @@ begin
   quit;
 
 
-end.
+end. 
