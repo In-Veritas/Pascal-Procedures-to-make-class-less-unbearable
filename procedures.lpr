@@ -39,6 +39,58 @@ begin
    end;
 end;
 
+// checks if an integer is in an array of integers
+type
+  intarray=array of integer;
+function is_inarray (var
+  list:intarray;
+  n:integer):boolean;
+var i: integer;
+  res:boolean;
+  begin
+     if length(list)=0 then
+     begin
+       res:=false;
+       end
+     else
+     begin
+       for i:=0 to (length(list)-1) do
+       begin
+         if list[i]=n then
+         begin
+           res:=true;
+           break;
+         end;
+         res:=false;
+         end;
+       end;
+     is_inarray:=res;
+     end;
+
+//returns number of occurences of an integer in an array of integers
+function number_occurences( var
+  list:intarray;
+  n:integer):integer;
+var i, c : integer;
+  begin
+     c:=0;
+   if is_inarray(list,n)=false then
+   begin
+     c:=0;
+   end
+   else
+   begin
+     for i:=0 to (length(list)-1) do
+     begin
+       if list[i]=n then
+       begin
+         inc(c,1)
+       end;
+     end;
+   end;
+   number_occurences:=c;
+  end;
+
 
 //Returns largest value in an array of integers
 function maxarray(list: array of integer):integer;
@@ -212,7 +264,6 @@ procedure print_array(list:array of integer);
 
 //tests
 var
-  i:integer;
   list: array of integer;
 begin
 
@@ -231,6 +282,14 @@ begin
   writeln(minarray([16,21,10,16,12,9,4]));
  //index_minarray; returns 6
   writeln(index_minarray([16,21,10,16,12,9,4]));
+  // is_inarray; returns true then false
+  //number_occurences; returns 2 then 1 then 0
+  list:=[16,21,10,16,12,9,4];
+  writeln(is_inarray( list , 9));
+  writeln(is_inarray( list , 22));
+  writeln(number_occurences(list,16));
+  writeln(number_occurences(list,9));
+  writeln(number_occurences(list,100));
 
   //average; returns 17.67
   writeln(average([17,18,18]):0:2);
