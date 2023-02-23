@@ -90,6 +90,37 @@ var i, c : integer;
    end;
    number_occurences:=c;
   end;
+  
+  // returns the sum of the elements of an array of integers between to indexes
+function sum_elmt_array(var
+  list:intarray;
+  n1:integer;//first index
+  n2:integer (*second index*)):integer;
+var i,sum : integer;
+begin
+ sum:=0;
+ if length(list)=0 then
+ begin
+   writeln(' The array is empty!');
+ end;
+ if n2> length(list) then
+ begin
+   writeln('Impossible! index out of range!');
+ end;
+ if n1>n2 then
+ begin
+   writeln(' Impossible! n1>n2');
+ end;
+ if n1=n2 then
+ begin
+   sum:=list[n1];
+ end;
+ for i:=n1 to n2 do
+ begin
+   sum:=sum+list[i];
+ end;
+ sum_elmt_array:=sum;
+end;
 
 
 //Returns largest value in an array of integers
@@ -284,13 +315,14 @@ begin
   writeln(index_minarray([16,21,10,16,12,9,4]));
   // is_inarray; returns true then false
   //number_occurences; returns 2 then 1 then 0
+  //sum_elmt_array; returns 31
   list:=[16,21,10,16,12,9,4];
   writeln(is_inarray( list , 9));
   writeln(is_inarray( list , 22));
   writeln(number_occurences(list,16));
   writeln(number_occurences(list,9));
   writeln(number_occurences(list,100));
-
+  writeln(sum_elmt_array(list,1,2));
   //average; returns 17.67
   writeln(average([17,18,18]):0:2);
 
